@@ -12,61 +12,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Animal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/objetosJava/Animal.java">
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="e#232#233#0" expanded="true" />
-                <element signature="e#275#276#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
-                <element signature="e#448#449#0" expanded="true" />
-                <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#588#589#0" expanded="true" />
-                <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#690#691#0" expanded="true" />
-                <element signature="e#653#654#0" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#739#740#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#888#889#0" expanded="true" />
-                <element signature="e#917#918#0" expanded="true" />
-                <element signature="e#1078#1079#0" expanded="true" />
-                <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#945#946#0" expanded="true" />
-                <element signature="e#1006#1007#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pessoa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/objetosJava/Pessoa.java">
+      <file leaf-file-name="Conta.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Conta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-              <folding>
-                <element signature="e#135#136#0" expanded="true" />
-                <element signature="e#171#172#0" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#281#282#0" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#381#382#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Principal.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/objetosJava/Principal.java">
+        <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+            <state relative-caret-position="391">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -86,6 +54,9 @@
         <option value="$PROJECT_DIR$/src/br/digitalhouse/objetosJava/Animal.java" />
         <option value="$PROJECT_DIR$/src/br/digitalhouse/objetosJava/Pessoa.java" />
         <option value="$PROJECT_DIR$/src/br/digitalhouse/objetosJava/Principal.java" />
+        <option value="$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Conta.java" />
+        <option value="$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Principal.java" />
       </list>
     </option>
   </component>
@@ -142,7 +113,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="br" type="462c0819:PsiDirectoryNode" />
               <item name="digitalhouse" type="462c0819:PsiDirectoryNode" />
-              <item name="objetosJava" type="462c0819:PsiDirectoryNode" />
+              <item name="exercicioConta" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -154,7 +125,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javaSemObjetos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Exercicios/src/exercicioConta/Exercicio1.java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -175,7 +146,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Principal (1)">
+    <configuration name="Principal (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.digitalhouse.exercicioConta.Principal" />
+      <module name="javaComObjetos" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.digitalhouse.exercicioConta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.digitalhouse.objetosJava.Principal" />
       <module name="javaComObjetos" />
@@ -228,8 +210,13 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Application.Principal" />
+      <item itemvalue="Application.Principal (1)" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Principal (1)" />
         <item itemvalue="Application.Principal" />
       </list>
     </recent_temporary>
@@ -244,15 +231,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564836177765</updated>
-      <workItem from="1564836189262" duration="5192000" />
+      <workItem from="1564836189262" duration="6582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5192000" />
+    <option name="totallyTimeSpent" value="6582000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -269,7 +256,7 @@
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -347,6 +334,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Exercicios/src/exercicioConta/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Exercicios/src/exercicioConta/Conta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Conta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Exercicios/src/exercicioConta/Exercicio1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/digitalhouse/exercicioConta/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>
