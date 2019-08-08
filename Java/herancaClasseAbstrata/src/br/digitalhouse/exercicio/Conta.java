@@ -31,7 +31,6 @@ public abstract class Conta {
 
         if (this.saldo < quantia) {
             System.out.println("Saldo insuficiente, vc ta sem grana " + this.cliente.getNome() + " :(");
-            return;
         }
 
         this.saldo = saldo - quantia;

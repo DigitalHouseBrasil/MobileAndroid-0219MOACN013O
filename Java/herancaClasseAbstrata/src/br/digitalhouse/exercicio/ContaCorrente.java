@@ -1,6 +1,6 @@
 package br.digitalhouse.exercicio;
 
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta {
     private double limite;
 
     public void deposito(Cheque cheque) {
@@ -22,8 +22,6 @@ public class ContaCorrente extends Conta{
             } else {
                 System.out.println("Saldo insuficiente, vc ta sem grana " + this.getCliente().getNome() + " :(");
             }
-
-            return;
         }
 
         this.setSaldo(this.getSaldo() - quantia);
