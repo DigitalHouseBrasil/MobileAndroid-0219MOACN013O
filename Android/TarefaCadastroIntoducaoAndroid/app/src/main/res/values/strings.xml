@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TarefaCadastroIntroducaoAndroid</string>
+    <string name="enviar">Enviar</string>
+    <string name="profissao">Profissão</string>
+    <string name="endereco">Endereço</string>
+    <string name="email">Email</string>
+    <string name="nome">Nome</string>
+</resources>
