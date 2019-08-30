@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExercicioLinear</string>
+    <string name="text1">Texto center</string>
+    <string name="text2">Enviar</string>
+</resources>

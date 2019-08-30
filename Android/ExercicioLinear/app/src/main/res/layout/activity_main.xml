@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/cor2"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="@color/cor6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="@string/text1"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/cor4">
+
+        <TextView
+            android:textColor="@color/cor6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text1"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/cor3"
+        android:orientation="horizontal">
+        <TextView
+            android:textColor="@color/cor6"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="420dp">
+
+        <LinearLayout
+            android:background="@color/cor2"
+            android:layout_width="200dp"
+            android:text="@string/text1"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textColor="@color/cor6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text1"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:text="@string/text1"
+            android:textSize="20dp"
+            android:background="@color/cor1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text1"
+                android:textColor="@color/cor6"
+                android:layout_marginTop="400dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/button_id"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/cor6"
+        android:background="@color/cor1"
+        android:text="@string/text2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+</LinearLayout>
