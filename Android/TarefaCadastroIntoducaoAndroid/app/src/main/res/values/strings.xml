@@ -5,4 +5,5 @@
     <string name="endereco">Endereço</string>
     <string name="email">Email</string>
     <string name="nome">Nome</string>
+    <string name="titulo">Cadastro de Funcionário</string>
 </resources>

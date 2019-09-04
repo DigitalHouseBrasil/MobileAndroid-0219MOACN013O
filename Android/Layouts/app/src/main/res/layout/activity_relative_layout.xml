@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeLayoutActivity">
+    <Button
+        android:id="@+id/btnTeste1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Teste1"
+        android:textColor="#ffffff"/>
+    <Button
+        android:id="@+id/btnTeste2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:text="teste2"
+        android:textColor="#ffffff"
+        android:layout_toRightOf="@id/btnTeste1"
+        android:layout_below="@id/btnTeste1"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/google"
+        android:layout_below="@id/btnTeste2"/>
+</RelativeLayout>
