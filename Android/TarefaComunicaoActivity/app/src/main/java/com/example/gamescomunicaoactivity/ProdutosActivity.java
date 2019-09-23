@@ -42,8 +42,11 @@ public class ProdutosActivity extends AppCompatActivity {
         total = findViewById(R.id.text_view_total);
         preco = findViewById(R.id.text_view_preco);
         btn_voltar = findViewById(R.id.bton_voltar);
+        total = findViewById(R.id.text_view_preco);
+
 
         getValor(getIntent());
+        somaTotal();
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,9 +87,17 @@ public class ProdutosActivity extends AppCompatActivity {
                     Snackbar.make(total, "Só podemos cadastrar 3 produtos", Snackbar.LENGTH_LONG);
                 }
             }
-
         } else {
             Toast.makeText(getApplicationContext(), "Deu ruim no Bundle", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void somaTotal(){
+            Integer valorUm = Integer.parseInt(valor_um.getText().toString());
+            Integer valorDois = Integer.parseInt(valor_dois.getText().toString());
+            Integer valorTres = Integer.parseInt(valor_tres.getText().toString());
+            Integer totalSoma;
+            totalSoma = valorUm + valorDois + valorTres;
+            total.setText(totalSoma.toString());
+        }
 }
