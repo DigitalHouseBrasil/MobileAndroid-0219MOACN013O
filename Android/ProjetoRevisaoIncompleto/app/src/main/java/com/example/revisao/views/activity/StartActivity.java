@@ -11,7 +11,7 @@ import com.example.revisao.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class StartActivity extends AppCompatActivity {
-    public static final String NOME_KEY = "nome";
+
     private TextInputLayout inputNome;
     private Button btnEnviar;
 
@@ -22,19 +22,7 @@ public class StartActivity extends AppCompatActivity {
 
         initView();
 
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String nome = inputNome.getEditText().getText().toString();
-
-                if (!nome.isEmpty()){
-                    enviaNomeAcctivity(nome);
-                }else{
-                    inputNome.setError("Preencha o campo nome");
-                }
-            }
-        });
-
+        //Implementar a lógica de ação do botão enviar
 
     }
 
@@ -43,12 +31,9 @@ public class StartActivity extends AppCompatActivity {
         btnEnviar = findViewById(R.id.btnEnviar);
     }
 
-    private void enviaNomeAcctivity(String nome){
-        Intent intent = new Intent(StartActivity.this, WelcomeActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString(NOME_KEY, nome);
-        intent.putExtras(bundle);
-        startActivity(intent);
+    //Implementaro a lógica do método de envio de dados para activity
+    private void enviaNomeActivity(String nome){
+
     }
 
 }

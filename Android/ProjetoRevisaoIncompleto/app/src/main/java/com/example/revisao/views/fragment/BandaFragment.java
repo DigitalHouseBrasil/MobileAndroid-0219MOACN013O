@@ -13,25 +13,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.revisao.R;
-import com.example.revisao.views.interfaces.Comunicador;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class BandaFragment extends Fragment {
     private Button btnVerFoto;
-    private Comunicador comunicador;
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-
-        try {
-            comunicador = (Comunicador) context;
-        }catch (Exception ex){
-            ex.getStackTrace();
-        }
-    }
+    //Sobreescever o método onAttach e implementar a lógica de inicialização do atributo do tipo Comunicador
 
     public BandaFragment() {
         // Required empty public constructor
@@ -42,18 +31,13 @@ public class BandaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_banda, container, false);
 
-        btnVerFoto = view.findViewById(R.id.btnVerFoto);
+        //Invocar o método da interface através do atributo comunicador
+        //Implementar a lógica de ação do botão ver foto
 
-        btnVerFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                comunicador.recebeNomeDaBanda("Aerosmith <3");
-            }
-        });
+        return inflater.inflate(R.layout.fragment_banda, container, false);
 
-        return view;
+
     }
 
 }
