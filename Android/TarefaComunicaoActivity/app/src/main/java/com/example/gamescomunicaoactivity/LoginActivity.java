@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
                     Bundle bundle = new Bundle();
-
                     bundle.putString(NOME_KEY, nome);
                     intent.putExtras(bundle);
                     startActivity(intent);
