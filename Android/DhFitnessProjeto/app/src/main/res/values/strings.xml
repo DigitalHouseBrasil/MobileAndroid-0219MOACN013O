@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DhFitness</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="resultado_text">O cálculo do IMC é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado. De acordo com a tabela de IMC, você está no seu peso ideal</string>
+</resources>
