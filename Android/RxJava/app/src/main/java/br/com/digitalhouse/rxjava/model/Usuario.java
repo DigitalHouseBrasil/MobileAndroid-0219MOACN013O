@@ -3,6 +3,8 @@ package br.com.digitalhouse.rxjava.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 public class Usuario implements Parcelable {
     private String nome;
     private int idade;
@@ -54,5 +56,21 @@ public class Usuario implements Parcelable {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (this == obj) {
+            return true;
+        }
+
+        return this.nome.equals(((Usuario) obj).nome);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "{nome: " + this.nome + ", idade: " + this.idade + "}";
     }
 }

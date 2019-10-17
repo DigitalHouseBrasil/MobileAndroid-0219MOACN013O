@@ -12,7 +12,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import br.com.digitalhouse.rxjava.adapters.UsuarioRecyclerViewAdapter;
 import br.com.digitalhouse.rxjava.model.Usuario;
@@ -21,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
-    private List<Usuario> usuarios = new ArrayList<>();
     private UsuarioRecyclerViewAdapter adapter;
 
     @Override
@@ -34,10 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerView);
-        adapter = new UsuarioRecyclerViewAdapter(getUsuarios());
+        adapter = new UsuarioRecyclerViewAdapter(new ArrayList<Usuario>());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,14 +42,26 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Você clicou no botão", Snackbar.LENGTH_SHORT).show();
             }
         });
-    }
 
-    private List<Usuario> getUsuarios() {
-        usuarios.add(new Usuario("Tairo", 31));
-        usuarios.add(new Usuario("Jéssica", 17));
-        usuarios.add(new Usuario("Jõao", 16));
-        usuarios.add(new Usuario("Tadashi", 32));
-        usuarios.add(new Usuario("Ana", 29));
-        return usuarios;
+        // Streams
+        // -- Java 8
+        // -- Labdas e Streams
+
+        // Theads
+        // -- O que é
+        // -- Thread de trabalho
+        // -- Main Thread
+        // -- runOnUiThread
+
+        // RxJava
+        // -- Observable
+        // -- Operator (map, filter, flatmap)
+        // -- Observer (subscribe)
+        // ---- Cold/Lazy Observer
+        // ---- Observable.just
+        // ---- Observable.range
+        // ---- Observable.fromIterable
+        // ---- Observable.create
+
     }
 }
