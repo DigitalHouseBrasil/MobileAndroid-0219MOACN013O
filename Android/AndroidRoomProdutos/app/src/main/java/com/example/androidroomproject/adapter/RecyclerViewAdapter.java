@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidroomproject.R;
+import com.example.androidroomproject.interfaces.OnClick;
 import com.example.androidroomproject.model.Produto;
 
 import java.util.List;
@@ -16,10 +17,11 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<Produto> produtoList;
-    //Implementar o listener
+    private OnClick listener;
 
-    public RecyclerViewAdapter(List<Produto> produtoList) {
+    public RecyclerViewAdapter(List<Produto> produtoList, OnClick listener) {
         this.produtoList = produtoList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -33,6 +35,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Produto produto = produtoList.get(position);
         holder.onBind(produto);
+
+        holder.itemView.setOnClickListener(v -> {
+            listener.onClick(produto);
+        });
+
     }
 
     @Override
@@ -40,7 +47,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return produtoList.size();
     }
 
-    //Implementar o método que atualiza a lista
+    //Método que atualiza a lista de produtos
+    public void atualizaListaProduto(List<Produto> listaProdutos){
+        this.produtoList.clear();
+        this.produtoList = listaProdutos;
+        notifyDataSetChanged();
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView nome;

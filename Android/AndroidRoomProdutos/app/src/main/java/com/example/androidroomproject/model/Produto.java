@@ -7,13 +7,17 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-
+@Entity(tableName = "produtos")
 public class Produto implements Parcelable {
 
+    //O autoGenerate determina se o id será criado autimaticamente
+    @PrimaryKey(autoGenerate = true)
     private long id;
 
+    @ColumnInfo(name = "nome")
     private String nomeProduto;
 
+    @ColumnInfo(name = "preco")
     private double preco;
 
     public Produto(String nomeProduto, double preco) {
