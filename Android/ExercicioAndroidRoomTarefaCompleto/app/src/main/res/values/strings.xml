@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AppMyTasks</string>
+    <string name="home">Home</string>
+    <string name="tarefas">Tarefas</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="minhas_tarefas">Minhas Tarefas</string>
+    <string name="ultimas_tarefas">Últimas tarefas</string>
+    <string name="nova_tarefa">Nova Tarefa</string>
+    <string name="nome_da_tarefa">Nome da tarefa</string>
+    <string name="descricao">Descrição</string>
+    <string name="todas_as_tarefas">Todas as Tarefas</string>
+</resources>
