@@ -1,0 +1,29 @@
+
+{
+  "Animes": [
+    {
+      "titulo": "One Push Man",
+      "estudio": "Madhouse",
+      "descricao": "é um gibi da web de ação e comédia japonês , criado pelo artista One e iniciado em 2009. O gibi da web rapidamente ganhou popularidade, alcançando 7,9 milhões de visualizações . Seu nome em japonês, Wanpanman é um trocadilho com base nas crianças personagem Anpanman , sendo Wanpan uma contração de wanpanchi",
+      "ilustrador": "Yusuke Murata"
+    },
+    {
+      "titulo": "My hero Academia",
+      "estudio": "Shūeisha",
+      "descricao": "É uma série de mangás escrita e polida por Kōhei Horikoshi . É baseado em um one-shot feito pelo mesmo autor e publicado no quinto volume do mangá: adomagadoki Dōbutsuen sob o nome de My Hero . 2 3 Em 11 de janeiro 2015 foi lançado um VOMIC baseado na manga. 4 Em 02 de novembro de 2015, ele começou a publicar um mangá spin-off chamado meu herói quebra Academy! e escrito por Hirofumi Neda.",
+      "ilustrador": "Kōhei Horikoshi"
+    },
+    {
+      "titulo": "Kimetsu no Yaiba",
+      "estudio": "Shūeisha",
+      "descricao": "Também conhecido como Guardiões da Noite em espanhol, é um mangá escrito e ilustrado por Koyoharu Gotōge que começou a serialização em 15 de fevereiro de 2016 na revista semanal Salto semanal Shonen da editora Shūeisha . Atualmente, 16 volumes tankōbon foram publicados. Uma adaptação para anime produzido pelo estúdio UfotableFoi lançado em 6 de abril de 2019 e encerrado em 28 de setembro do mesmo ano. No final do último episódio do anime, foi revelado em uma cena pós-crédito que o arco Mugen Train será adaptado no formato de filme. Sua data de lançamento é atualmente desconhecida.",
+      "ilustrador": "Koyoharu Gotōge"
+    },
+    {
+      "titulo": "Shingeki no Kyojin",
+      "estudio": "Shōnen Magazine Comics",
+      "descricao": "A trama gira em torno de Eren Jaeger, que depois de perder sua mãe quando sua cidade foi atacada pelas mãos de seres humanóides chamados Titãs . Eren, junto com seus amigos de infância, decide se juntar ao exército com o desejo de se vingar dos Titãs. Mais tarde, Eren descobre que ele tem a capacidade de se tornar um titã, o que desencadeia uma série de eventos que afetarão ele, seus amigos e o resto da humanidade.",
+      "ilustrador": "Hajime Isayama"
+    }
+  ]
+}
