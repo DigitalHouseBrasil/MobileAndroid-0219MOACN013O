@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
-        //TODO: Para resolver a exceção que estava sendo causada basta alterar o nome da classe Filme para  Filme
+        //TODO: Para resolver a exceção que estava sendo causada basta alterar o nome da classe Filme para Result
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
