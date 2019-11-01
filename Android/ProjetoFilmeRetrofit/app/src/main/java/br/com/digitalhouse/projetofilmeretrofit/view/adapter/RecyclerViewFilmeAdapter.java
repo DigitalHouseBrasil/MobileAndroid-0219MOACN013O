@@ -15,13 +15,16 @@ import java.util.List;
 
 import br.com.digitalhouse.projetofilmeretrofit.R;
 import br.com.digitalhouse.projetofilmeretrofit.model.Filme;
+import br.com.digitalhouse.projetofilmeretrofit.view.interfaces.OnClick;
 
 public class RecyclerViewFilmeAdapter extends RecyclerView.Adapter<RecyclerViewFilmeAdapter.ViewHolder> {
 
     private List<Filme> fimesList;
+    private OnClick listener;
 
-    public RecyclerViewFilmeAdapter(List<Filme> fimesList) {
+    public RecyclerViewFilmeAdapter(List<Filme> fimesList, OnClick listener) {
         this.fimesList = fimesList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -35,6 +38,8 @@ public class RecyclerViewFilmeAdapter extends RecyclerView.Adapter<RecyclerViewF
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Filme filme = fimesList.get(position);
         holder.onBind(filme);
+
+        holder.itemView.setOnClickListener(v -> listener.click(filme));
     }
 
     @Override

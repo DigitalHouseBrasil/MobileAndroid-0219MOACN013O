@@ -14,7 +14,7 @@ public class FilmeResult {
     @Expose
     private Long page;
     @Expose
-    private List<Filme> filmes;
+    private List<Filme> results;
     @SerializedName("total_pages")
     private Long totalPages;
     @SerializedName("total_results")
@@ -36,12 +36,12 @@ public class FilmeResult {
         this.page = page;
     }
 
-    public List<Filme> getFilmes() {
-        return filmes;
+    public List<Filme> getResults() {
+        return results;
     }
 
-    public void setFilmes(List<Filme> filmes) {
-        this.filmes = filmes;
+    public void setResults(List<Filme> filmes) {
+        this.results = filmes;
     }
 
     public Long getTotalPages() {

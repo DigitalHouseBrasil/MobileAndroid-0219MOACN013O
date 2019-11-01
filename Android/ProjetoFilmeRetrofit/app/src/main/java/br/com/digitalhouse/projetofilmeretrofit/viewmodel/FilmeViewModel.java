@@ -11,9 +11,12 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import br.com.digitalhouse.projetofilmeretrofit.model.Filme;
+import br.com.digitalhouse.projetofilmeretrofit.model.FilmeResult;
 import br.com.digitalhouse.projetofilmeretrofit.repository.FilmeRepository;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class FilmeViewModel extends AndroidViewModel {
@@ -39,9 +42,19 @@ public class FilmeViewModel extends AndroidViewModel {
                 repository.getFilmes(apiKey)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .doOnSubscribe(disposable1 -> loading.setValue(true))
+                        .doOnSubscribe(new Consumer<Disposable>() {
+                            @Override
+                            public void accept(Disposable disposable1) throws Exception {
+                                loading.setValue(true);
+                            }
+                        })
                         .doOnTerminate(() -> loading.setValue(false))
-                        .subscribe(filmeResult -> listaFilme.setValue(filmeResult.getFilmes()),
+                        .subscribe(new Consumer<FilmeResult>() {
+                                       @Override
+                                       public void accept(FilmeResult filmeResult) throws Exception {
+                                           listaFilme.setValue(filmeResult.getResults());
+                                       }
+                                   },
                                 throwable -> {
                                     Log.i("LOG", "erro" + throwable.getMessage());
                                 })
