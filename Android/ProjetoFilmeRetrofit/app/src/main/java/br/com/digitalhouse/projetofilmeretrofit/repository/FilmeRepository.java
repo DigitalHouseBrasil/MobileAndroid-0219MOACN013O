@@ -7,8 +7,8 @@ import static br.com.digitalhouse.projetofilmeretrofit.data.remote.RetrofitServi
 
 public class FilmeRepository {
 
-    public Observable<FilmeResult> getFilmes(String apiKey){
-        return getApiService().getAllFilmes(apiKey);
+    public Observable<FilmeResult> getFilmes(String apiKey, int pagina){
+        return getApiService().getAllFilmes(apiKey, pagina);
     }
 
 }

@@ -37,9 +37,9 @@ public class FilmeViewModel extends AndroidViewModel {
         return this.loading;
     }
 
-    public void getAllFilmes(String apiKey) {
+    public void getAllFilmes(String apiKey, int pagina) {
         disposable.add(
-                repository.getFilmes(apiKey)
+                repository.getFilmes(apiKey, pagina)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnSubscribe(new Consumer<Disposable>() {
@@ -49,12 +49,7 @@ public class FilmeViewModel extends AndroidViewModel {
                             }
                         })
                         .doOnTerminate(() -> loading.setValue(false))
-                        .subscribe(new Consumer<FilmeResult>() {
-                                       @Override
-                                       public void accept(FilmeResult filmeResult) throws Exception {
-                                           listaFilme.setValue(filmeResult.getResults());
-                                       }
-                                   },
+                        .subscribe(filmeResult -> listaFilme.setValue(filmeResult.getResults()),
                                 throwable -> {
                                     Log.i("LOG", "erro" + throwable.getMessage());
                                 })

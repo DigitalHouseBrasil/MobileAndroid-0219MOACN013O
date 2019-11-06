@@ -47,10 +47,18 @@ public class RecyclerViewFilmeAdapter extends RecyclerView.Adapter<RecyclerViewF
         return fimesList.size();
     }
 
+    //Método que atualiza a lista
     public void atualizaLista(List<Filme> novaLista){
-        this.fimesList.clear();
-        this.fimesList = novaLista;
-        notifyDataSetChanged();
+        //Se a lista for vazia ele adiciona na lista vazia os valores da lista de dados que está chegando
+       if (this.fimesList.isEmpty()){
+           this.fimesList = novaLista;
+       }else{
+           //Se a lista não for vazia e já possuir dados nós adicionamos nessa lista os novos dados que estão chegando em sequencia
+           //ou seja logo após o ultimo item da lista adicionamos os novos dados em sequencia como se fosse uma fila
+           this.fimesList.addAll(novaLista);
+       }
+       //No final notificamos as mudanças acontecidas
+       notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
