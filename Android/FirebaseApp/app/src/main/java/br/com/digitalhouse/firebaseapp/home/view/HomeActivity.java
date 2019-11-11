@@ -112,6 +112,12 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewClick
     }
 
     private void logout() {
-        // TODO: fazer logout
+        AuthUI.getInstance()
+                .signOut(this)
+                .addOnCompleteListener(task -> {
+                    startActivity(new Intent(this, LoginActivity.class));
+                    finish();
+                });
+        LoginManager.getInstance().logOut();
     }
 }

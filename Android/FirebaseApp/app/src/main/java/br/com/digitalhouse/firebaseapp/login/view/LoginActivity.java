@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
         initViews();
 
-        //TODO: Inicializar callback facebook
+        callbackManager = CallbackManager.Factory.create();
 
         //Vai para tela de registro de usuário
         textViewGotoRegister.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
@@ -63,9 +63,6 @@ public class LoginActivity extends AppCompatActivity {
 
         // Login com Google
         btnLoginGoogle.setOnClickListener(v -> loginGoogle());
-
-        // TODO: remover para não ir para home direto
-        irParaHome("");
     }
 
     private void initViews() {
@@ -88,16 +85,58 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // tentamos fazer o login com o email e senha no firebase
-        // TODO: Loginm com email e senha
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+
+                    // Caso login com sucesso vamos para tela  Home
+                    if (task.isSuccessful()) {
+                        irParaHome(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                    } else {
+                        // Se deu algum erro mostramos para o usuário a mensagem
+                        Snackbar.make(btnLogin, task.getException().getMessage(), Snackbar.LENGTH_LONG).show();
+                    }
+                });
     }
 
     private void loginGoogle() {
-      // TODO: Login Google
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        GoogleApiClient googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(LoginActivity.this, connectionResult -> {
+                    Toast.makeText(getApplicationContext(), "Falha na conexão", Toast.LENGTH_SHORT).show();
+                })
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
+        Intent signIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+        startActivityForResult(signIntent, RC_SIGN_IN);
     }
 
 
     public void loginFacebook() {
-       // TODO: Login facebook
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        irParaHome(loginResult.getAccessToken().getUserId());
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        Toast.makeText(LoginActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        Log.i("LOG", "Login Error: " + exception.getMessage());
+                    }
+                });
     }
 
     private void irParaHome(String uiid) {
@@ -107,17 +146,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void autenticacaoGoogle(GoogleSignInAccount account) {
-        // TODO: autenticar com google e ir para home
+        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+        FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                irParaHome(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            } else {
+                Toast.makeText(getApplicationContext(), "Erro login google", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO: activeresult para callback facebook
         callbackManager.onActivityResult(requestCode, resultCode, data);
-
         super.onActivityResult(requestCode, resultCode, data);
 
-        // TODO: validar requestcode para google
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
