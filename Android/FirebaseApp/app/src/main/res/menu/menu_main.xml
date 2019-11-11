@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.digitalhouse.firebaseapp.home.MainActivity">
+    <item
+        android:id="@+id/action_favoritos"
+        android:icon="@drawable/ic_favorite_white"
+        android:orderInCategory="100"
+        android:title="@string/action_favoritos"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_exit_to_app_white"
+        android:orderInCategory="100"
+        android:title="@string/action_logout"
+        app:showAsAction="never" />
+
+</menu>

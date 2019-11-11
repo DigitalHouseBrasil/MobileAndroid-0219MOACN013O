@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1013240773004",
+    "firebase_url": "https://fir-app-b6059.firebaseio.com",
+    "project_id": "fir-app-b6059",
+    "storage_bucket": "fir-app-b6059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013240773004:android:ebcdb421682fe2bf1cbea9",
+        "android_client_info": {
+          "package_name": "br.com.digitalhouse.firebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJyajWnQvdNqAvAN2VahdDxzNRDiQeQtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
