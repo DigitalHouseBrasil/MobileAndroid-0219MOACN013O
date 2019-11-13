@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "259579469041",
+    "firebase_url": "https://tmdbaudioproject-2ef7f.firebaseio.com",
+    "project_id": "tmdbaudioproject-2ef7f",
+    "storage_bucket": "tmdbaudioproject-2ef7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259579469041:android:476cbb7549713a71b65d50",
+        "android_client_info": {
+          "package_name": "com.example.tmdbaudio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259579469041-okrgm08k3j5jb967dvt91li3qpjv9h9p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tmdbaudio",
+            "certificate_hash": "bad78900839c450f1c3e712ab58baec20b3d74a6"
+          }
+        },
+        {
+          "client_id": "259579469041-rahomm9bmr6qi7lb3aaepa95ec400s9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv6-TraJqiOMj2ax63uCF7DW3CfdQt_xI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259579469041-rahomm9bmr6qi7lb3aaepa95ec400s9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
