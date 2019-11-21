@@ -1,4 +1,4 @@
-package br.com.digitalhouse.firebaseapp.adapters;
+package br.com.digitalhouse.firebaseapp.jaum.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +14,9 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import br.com.digitalhouse.firebaseapp.R;
-import br.com.digitalhouse.firebaseapp.interfaces.FavoriteItemClick;
-import br.com.digitalhouse.firebaseapp.interfaces.RecyclerViewClick;
-import br.com.digitalhouse.firebaseapp.model.Result;
+import br.com.digitalhouse.firebaseapp.jaum.interfaces.FavoriteItemClick;
+import br.com.digitalhouse.firebaseapp.jaum.interfaces.RecyclerViewClick;
+import br.com.digitalhouse.firebaseapp.jaum.model.Result;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -43,7 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.bind(result);
 
         viewHolder.itemView.setOnClickListener(v -> listener.clickListener(result));
-        viewHolder.imageFavorite.setOnClickListener(v -> favoriteItemClick.removeFavoriteClickListener(result));
+        viewHolder.imageFavorite.setOnClickListener(v -> favoriteItemClick.addFavoriteClickListener(result));
     }
 
     //método que atualiza a lista do adapter

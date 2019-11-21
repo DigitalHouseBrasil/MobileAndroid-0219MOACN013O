@@ -3,6 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login2.Login2Activity">
+    tools:context=".jaum.login2.Login2Activity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,7 @@
-package br.com.digitalhouse.firebaseapp.login2;
+package br.com.digitalhouse.firebaseapp.jaum.login2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.com.digitalhouse.firebaseapp.R;
-import br.com.digitalhouse.firebaseapp.home.view.HomeActivity;
+import br.com.digitalhouse.firebaseapp.jaum.home.view.HomeActivity;
 
 public class Login2Activity extends AppCompatActivity {
 

@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "1013240773004",
-    "firebase_url": "https://fir-app-b6059.firebaseio.com",
-    "project_id": "fir-app-b6059",
-    "storage_bucket": "fir-app-b6059.appspot.com"
+    "project_number": "942297119678",
+    "firebase_url": "https://fir-appjaum.firebaseio.com",
+    "project_id": "fir-appjaum",
+    "storage_bucket": "fir-appjaum.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1013240773004:android:ebcdb421682fe2bf1cbea9",
+        "mobilesdk_app_id": "1:942297119678:android:a08ff69505986243d6d7ef",
         "android_client_info": {
-          "package_name": "br.com.digitalhouse.firebaseapp"
+          "package_name": "br.com.digitalhouse.firebaseapp.jaum"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+          "client_id": "942297119678-95ai3hug2bpksdidqf703klcif86ipuj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.digitalhouse.firebaseapp.jaum",
+            "certificate_hash": "6e205ec8bab6170cc3aacc71b5842a8156fc810e"
+          }
+        },
+        {
+          "client_id": "942297119678-nan96ieuifkt0uop1ntlgt0sbivgn1oo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBJyajWnQvdNqAvAN2VahdDxzNRDiQeQtA"
+          "current_key": "AIzaSyAH6Oop6fOnGPHE6VXb4MuayRMq6W7rvKE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+              "client_id": "942297119678-nan96ieuifkt0uop1ntlgt0sbivgn1oo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

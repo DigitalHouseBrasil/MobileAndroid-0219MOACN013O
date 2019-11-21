@@ -1,4 +1,4 @@
-package br.com.digitalhouse.firebaseapp.home.view;
+package br.com.digitalhouse.firebaseapp.jaum.home.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.facebook.login.LoginManager;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.material.snackbar.Snackbar;
@@ -20,14 +15,19 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import br.com.digitalhouse.firebaseapp.R;
-import br.com.digitalhouse.firebaseapp.adapters.RecyclerViewAdapter;
-import br.com.digitalhouse.firebaseapp.favorites.view.FavoritesActivity;
-import br.com.digitalhouse.firebaseapp.home.viewmodel.HomeViewModel;
-import br.com.digitalhouse.firebaseapp.interfaces.FavoriteItemClick;
-import br.com.digitalhouse.firebaseapp.interfaces.RecyclerViewClick;
-import br.com.digitalhouse.firebaseapp.login.view.LoginActivity;
-import br.com.digitalhouse.firebaseapp.model.Result;
+import br.com.digitalhouse.firebaseapp.jaum.adapters.RecyclerViewAdapter;
+import br.com.digitalhouse.firebaseapp.jaum.favorites.view.FavoritesActivity;
+import br.com.digitalhouse.firebaseapp.jaum.home.viewmodel.HomeViewModel;
+import br.com.digitalhouse.firebaseapp.jaum.interfaces.FavoriteItemClick;
+import br.com.digitalhouse.firebaseapp.jaum.interfaces.RecyclerViewClick;
+import br.com.digitalhouse.firebaseapp.jaum.login.view.LoginActivity;
+import br.com.digitalhouse.firebaseapp.jaum.login2.Login2Activity;
+import br.com.digitalhouse.firebaseapp.jaum.model.Result;
 
 public class HomeActivity extends AppCompatActivity implements RecyclerViewClick, FavoriteItemClick {
 
@@ -84,6 +84,11 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewClick
 
     @Override
     public void removeFavoriteClickListener(Result result) {
+
+    }
+
+    @Override
+    public void addFavoriteClickListener(Result result) {
         viewModel.salvarFavorito(result);
     }
 
@@ -113,5 +118,12 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewClick
 
     private void logout() {
         // TODO: fazer logout
+
+        AuthUI.getInstance().signOut(this)
+                .addOnCompleteListener(task -> {
+                    startActivity(new Intent(this, LoginActivity.class));
+                    finish();
+                });
+        LoginManager.getInstance().logOut();
     }
 }

@@ -1,7 +1,7 @@
-package br.com.digitalhouse.firebaseapp.network;
+package br.com.digitalhouse.firebaseapp.jaum.network;
 
 
-import br.com.digitalhouse.firebaseapp.model.Movie;
+import br.com.digitalhouse.firebaseapp.jaum.model.Movie;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

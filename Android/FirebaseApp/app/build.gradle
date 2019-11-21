@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "br.com.digitalhouse.firebaseapp"
+        applicationId "br.com.digitalhouse.firebaseapp.jaum"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -71,6 +70,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
 }
+apply plugin: 'com.google.gms.google-services'
 
 //TODO: aplicar plugin play services

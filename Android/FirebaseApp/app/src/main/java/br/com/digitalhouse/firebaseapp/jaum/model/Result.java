@@ -1,5 +1,5 @@
 
-package br.com.digitalhouse.firebaseapp.model;
+package br.com.digitalhouse.firebaseapp.jaum.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

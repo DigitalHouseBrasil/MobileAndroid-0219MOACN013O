@@ -1,4 +1,4 @@
-package br.com.digitalhouse.firebaseapp.network;
+package br.com.digitalhouse.firebaseapp.jaum.network;
 
 import java.util.concurrent.TimeUnit;
 

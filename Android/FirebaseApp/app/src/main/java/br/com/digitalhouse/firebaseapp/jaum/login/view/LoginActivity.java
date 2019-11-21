@@ -1,13 +1,10 @@
-package br.com.digitalhouse.firebaseapp.login.view;
+package br.com.digitalhouse.firebaseapp.jaum.login.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -16,22 +13,19 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Arrays;
 
+import androidx.appcompat.app.AppCompatActivity;
 import br.com.digitalhouse.firebaseapp.R;
-import br.com.digitalhouse.firebaseapp.home.view.HomeActivity;
-import br.com.digitalhouse.firebaseapp.register.view.RegisterActivity;
-import br.com.digitalhouse.firebaseapp.util.AppUtil;
+import br.com.digitalhouse.firebaseapp.jaum.home.view.HomeActivity;
+import br.com.digitalhouse.firebaseapp.jaum.register.view.RegisterActivity;
+import br.com.digitalhouse.firebaseapp.jaum.util.AppUtil;
 
 public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1001;
@@ -51,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         initViews();
 
         //TODO: Inicializar callback facebook
+        callbackManager = CallbackManager.Factory.create();
 
         //Vai para tela de registro de usuário
         textViewGotoRegister.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
@@ -64,8 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         // Login com Google
         btnLoginGoogle.setOnClickListener(v -> loginGoogle());
 
-        // TODO: remover para não ir para home direto
-        irParaHome("");
+        AppUtil.printKeyHash(this);
     }
 
     private void initViews() {
@@ -88,16 +82,42 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // tentamos fazer o login com o email e senha no firebase
-        // TODO: Loginm com email e senha
+        FirebaseAuth.getInstance()
+                .signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        irParaHome(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    } else {
+                        Snackbar.make(btnLogin, task.getException().getMessage(), Snackbar.LENGTH_LONG).show();
+                    }
+                });
     }
 
     private void loginGoogle() {
-      // TODO: Login Google
+        // TODO: Login Google
     }
 
 
     public void loginFacebook() {
-       // TODO: Login facebook
+        // TODO: Login facebook
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                irParaHome(loginResult.getAccessToken().getUserId());
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(LoginActivity.this, "Cancelado", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     private void irParaHome(String uiid) {

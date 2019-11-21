@@ -1,16 +1,20 @@
-package br.com.digitalhouse.firebaseapp.register.view;
+package br.com.digitalhouse.firebaseapp.jaum.register.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
+import androidx.appcompat.app.AppCompatActivity;
 import br.com.digitalhouse.firebaseapp.R;
+import br.com.digitalhouse.firebaseapp.jaum.home.view.HomeActivity;
+import br.com.digitalhouse.firebaseapp.jaum.util.AppUtil;
 
 public class RegisterActivity extends AppCompatActivity {
     private TextInputLayout textInputLayoutName;
@@ -45,6 +49,20 @@ public class RegisterActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
 
         // TODO: cadastro co firebase via email e senha
+        FirebaseAuth.getInstance()
+                .createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+
+                        AppUtil.salvarIdUsuario(RegisterActivity.this, FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                        finish();
+
+                    } else {
+                        Snackbar.make(btnRegister, task.getException().getMessage(), Snackbar.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+                });
     }
 
     // Essa validação pode ficar na view em vez do viewmodel, pois ela trata os elementos da tela
