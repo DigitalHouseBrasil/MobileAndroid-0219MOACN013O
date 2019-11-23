@@ -26,8 +26,8 @@ import br.com.digitalhouse.firebaseapp.jaum.home.viewmodel.HomeViewModel;
 import br.com.digitalhouse.firebaseapp.jaum.interfaces.FavoriteItemClick;
 import br.com.digitalhouse.firebaseapp.jaum.interfaces.RecyclerViewClick;
 import br.com.digitalhouse.firebaseapp.jaum.login.view.LoginActivity;
-import br.com.digitalhouse.firebaseapp.jaum.login2.Login2Activity;
 import br.com.digitalhouse.firebaseapp.jaum.model.Result;
+import br.com.digitalhouse.firebaseapp.jaum.profile.ProfileActivity;
 
 public class HomeActivity extends AppCompatActivity implements RecyclerViewClick, FavoriteItemClick {
 
@@ -105,6 +105,11 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewClick
 
         if (id == R.id.action_favoritos) {
             startActivity(new Intent(HomeActivity.this, FavoritesActivity.class));
+            return true;
+        }
+
+        if (id == R.id.action_profile) {
+            startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
             return true;
         }
 

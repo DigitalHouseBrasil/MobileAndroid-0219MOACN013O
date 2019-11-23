@@ -15,12 +15,19 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Arrays;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import br.com.digitalhouse.firebaseapp.R;
 import br.com.digitalhouse.firebaseapp.jaum.home.view.HomeActivity;
@@ -104,7 +111,14 @@ public class LoginActivity extends AppCompatActivity {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                irParaHome(loginResult.getAccessToken().getUserId());
+
+                AuthCredential credential = FacebookAuthProvider
+                        .getCredential(loginResult.getAccessToken().getToken());
+
+                FirebaseAuth.getInstance().signInWithCredential(credential)
+                        .addOnCompleteListener(task -> {
+                            irParaHome(loginResult.getAccessToken().getUserId());
+                        });
             }
 
             @Override
