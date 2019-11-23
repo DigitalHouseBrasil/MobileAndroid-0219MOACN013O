@@ -28,6 +28,7 @@ import br.com.digitalhouse.firebaseapp.interfaces.FavoriteItemClick;
 import br.com.digitalhouse.firebaseapp.interfaces.RecyclerViewClick;
 import br.com.digitalhouse.firebaseapp.login.view.LoginActivity;
 import br.com.digitalhouse.firebaseapp.model.Result;
+import br.com.digitalhouse.firebaseapp.profile.view.ProfileActivity;
 
 public class HomeActivity extends AppCompatActivity implements RecyclerViewClick, FavoriteItemClick {
 
@@ -83,8 +84,13 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewClick
     }
 
     @Override
-    public void removeFavoriteClickListener(Result result) {
+    public void addFavoriteClickListener(Result result) {
         viewModel.salvarFavorito(result);
+    }
+
+    @Override
+    public void removeFavoriteClickListener(Result result) {
+
     }
 
     @Override
@@ -103,6 +109,11 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewClick
             return true;
         }
 
+        if (id == R.id.action_profile) {
+            startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+            return true;
+        }
+
         if (id == R.id.action_logout) {
             logout();
             return true;
@@ -112,12 +123,16 @@ public class HomeActivity extends AppCompatActivity implements RecyclerViewClick
     }
 
     private void logout() {
+
+        /*Faz logout do firebase*/
         AuthUI.getInstance()
                 .signOut(this)
                 .addOnCompleteListener(task -> {
                     startActivity(new Intent(this, LoginActivity.class));
                     finish();
                 });
+
+        /*Faz logout do facebook*/
         LoginManager.getInstance().logOut();
     }
 }

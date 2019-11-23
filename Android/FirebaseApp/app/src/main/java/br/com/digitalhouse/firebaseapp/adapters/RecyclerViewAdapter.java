@@ -43,7 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.bind(result);
 
         viewHolder.itemView.setOnClickListener(v -> listener.clickListener(result));
-        viewHolder.imageFavorite.setOnClickListener(v -> favoriteItemClick.removeFavoriteClickListener(result));
+        viewHolder.imageFavorite.setOnClickListener(v -> favoriteItemClick.addFavoriteClickListener(result));
     }
 
     //método que atualiza a lista do adapter

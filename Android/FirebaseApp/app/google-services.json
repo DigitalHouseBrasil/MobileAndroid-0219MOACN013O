@@ -15,6 +15,96 @@
       },
       "oauth_client": [
         {
+          "client_id": "1013240773004-f9ul4vgmu2iak1liddd6sib85vq3avqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.digitalhouse.firebaseapp",
+            "certificate_hash": "de711f8cd5eb7b17fcafb461f23213fdeba40fdf"
+          }
+        },
+        {
+          "client_id": "1013240773004-dokmq9mdng8c1mjeg9ng41o0v8lkiji1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.digitalhouse.firebaseapp",
+            "certificate_hash": "1d1594192bc01327db84102d8a9a856ee1f5a930"
+          }
+        },
+        {
+          "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJyajWnQvdNqAvAN2VahdDxzNRDiQeQtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013240773004:android:1ad24dda7d81e5f01cbea9",
+        "android_client_info": {
+          "package_name": "br.com.digitalhouse.firebaseapp.tairo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013240773004-ldi05761298m9k769tv2gp0pqtn53ja5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.digitalhouse.firebaseapp.tairo",
+            "certificate_hash": "1d1594192bc01327db84102d8a9a856ee1f5a930"
+          }
+        },
+        {
+          "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJyajWnQvdNqAvAN2VahdDxzNRDiQeQtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013240773004:android:b9bde88fa1bfbae51cbea9",
+        "android_client_info": {
+          "package_name": "com.digitalhouse.digitalphotos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013240773004-d09ata0fqn0edidmortrgmq467qfit0o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digitalhouse.digitalphotos",
+            "certificate_hash": "1d1594192bc01327db84102d8a9a856ee1f5a930"
+          }
+        },
+        {
           "client_id": "1013240773004-t6ul3m11ikds2taf3rvhg4qa0o7tgpgk.apps.googleusercontent.com",
           "client_type": 3
         }

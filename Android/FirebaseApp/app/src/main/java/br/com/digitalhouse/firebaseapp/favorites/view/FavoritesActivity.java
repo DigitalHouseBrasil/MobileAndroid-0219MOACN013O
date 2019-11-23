@@ -72,6 +72,11 @@ public class FavoritesActivity extends AppCompatActivity implements FavoriteItem
     }
 
     @Override
+    public void addFavoriteClickListener(Result result) {
+
+    }
+
+    @Override
     public void removeFavoriteClickListener(Result result) {
 
         // Pegamos a instancia do firebase, objeto necessario para salvar no banco de dados

@@ -10,6 +10,13 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_account_circle"
+        android:orderInCategory="100"
+        android:title="@string/action_logout"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_logout"
         android:icon="@drawable/ic_exit_to_app_white"
         android:orderInCategory="100"

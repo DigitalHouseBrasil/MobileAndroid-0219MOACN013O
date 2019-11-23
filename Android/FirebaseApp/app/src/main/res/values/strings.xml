@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Firebase App</string>
     <string name="action_logout">Sair</string>
+    <string name="action_profile">Perfil</string>
     <string name="action_favoritos">Favoritos</string>
     <string name="action_perfil">Perfil</string>
     <string name="facebook_application_id" translatable="false">423427445217409</string>
