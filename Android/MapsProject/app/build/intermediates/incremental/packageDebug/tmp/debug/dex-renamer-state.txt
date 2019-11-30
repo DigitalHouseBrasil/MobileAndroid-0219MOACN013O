@@ -1,0 +1,4 @@
+#Sat Nov 30 12:31:33 BRST 2019
+base.0=C\:\\Users\\Jessica\\Desktop\\MapsProject\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
