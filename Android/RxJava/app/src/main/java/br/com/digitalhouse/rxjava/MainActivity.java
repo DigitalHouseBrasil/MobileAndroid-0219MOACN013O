@@ -41,7 +41,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        fab.setOnClickListener(view -> Snackbar.make(view, "Você clicou no botão", Snackbar.LENGTH_SHORT).show());
+        fab.setOnClickListener(view ->
+                new Thread(() -> {
+
+                }).start()
+        );
+
 
         // Streams
         // -- Java 8
@@ -182,12 +187,12 @@ public class MainActivity extends AppCompatActivity {
                 }, throwable -> {
                     // Erro
                     Toast.makeText(this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
-                },() -> {
+                }, () -> {
                     // Complete, completou sem erro
                 });
     }
 
-    private Observable<List<Usuario>> getUsuarios(){
+    private Observable<List<Usuario>> getUsuarios() {
         List<Usuario> usuarios = new ArrayList<>();
         usuarios.add(new Usuario("Tairo", 15));
         usuarios.add(new Usuario("Jésica", 18));
@@ -199,6 +204,6 @@ public class MainActivity extends AppCompatActivity {
         usuarios.add(new Usuario("Tairo", 15));
         usuarios.add(new Usuario("Tairo", 15));
 
-        return  Observable.just(usuarios);
+        return Observable.just(usuarios);
     }
 }
