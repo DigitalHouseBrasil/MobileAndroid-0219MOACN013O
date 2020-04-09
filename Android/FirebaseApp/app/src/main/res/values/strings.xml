@@ -6,5 +6,6 @@
     <string name="facebook_application_id" translatable="false">423427445217409</string>
     <string name="facebook_app_id">423427445217409</string>
     <string name="fb_login_protocol_scheme">fb423427445217409</string>
+    <string name="default_notification_channel_id">digitalhouse</string>
 
 </resources>

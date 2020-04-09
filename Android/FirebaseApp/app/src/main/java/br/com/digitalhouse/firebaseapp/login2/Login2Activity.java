@@ -19,6 +19,7 @@ import br.com.digitalhouse.firebaseapp.home.view.HomeActivity;
 
 public class Login2Activity extends AppCompatActivity {
 
+    private Button btnLogout;
     private static final int RC_SIGN_IN = 1001;
     List<AuthUI.IdpConfig> providers;
 
