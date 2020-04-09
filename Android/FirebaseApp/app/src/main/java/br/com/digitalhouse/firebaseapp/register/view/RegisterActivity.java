@@ -1,28 +1,49 @@
 package br.com.digitalhouse.firebaseapp.register.view;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.List;
 
 import br.com.digitalhouse.firebaseapp.R;
 import br.com.digitalhouse.firebaseapp.home.view.HomeActivity;
 import br.com.digitalhouse.firebaseapp.util.AppUtil;
+import de.hdodenhof.circleimageview.CircleImageView;
+import pl.aprilapps.easyphotopicker.DefaultCallback;
+import pl.aprilapps.easyphotopicker.EasyImage;
 
 public class RegisterActivity extends AppCompatActivity {
     private TextInputLayout textInputLayoutName;
     private TextInputLayout textInputLayoutEmail;
     private TextInputLayout textInputLayoutPassword;
     private Button btnRegister;
+    private CircleImageView imageView;
     private ProgressBar progressBar;
+    private static final int PERMISSION_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         textInputLayoutEmail = findViewById(R.id.textinput_email);
         textInputLayoutPassword = findViewById(R.id.textinput_password);
         progressBar = findViewById(R.id.progressBar);
+        imageView = findViewById(R.id.imageview_user_login);
 
         btnRegister.setOnClickListener(v -> {
             String email = textInputLayoutEmail.getEditText().getText().toString();
@@ -44,6 +66,23 @@ public class RegisterActivity extends AppCompatActivity {
                 registrarUsuario(email, password);
             }
         });
+
+        imageView.setOnClickListener(view -> {
+            int permissionCamera = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+
+            int permissionStorage = ContextCompat
+                    .checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+            if (permissionCamera == PackageManager.PERMISSION_GRANTED &&
+                    permissionStorage == PackageManager.PERMISSION_GRANTED) {
+                EasyImage.openCameraForImage(this, MODE_PRIVATE);
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        PERMISSION_CODE);
+            }
+        });
+
     }
 
     private void registrarUsuario(String email, String password) {
@@ -96,5 +135,57 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == PERMISSION_CODE) {
+            EasyImage.openCameraForImage(this, MODE_PRIVATE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        EasyImage.handleActivityResult(requestCode, resultCode, data, this, new DefaultCallback() {
+            @Override
+            public void onImagesPicked(@NonNull List<File> imageFiles, EasyImage.ImageSource source, int type) {
+                for (File file : imageFiles) {
+                    InputStream stream = null;
+                    try {
+                        stream = new FileInputStream(file);
+                        salvarImagemFirebase(stream, "imagem-perfil"/*mediaFile.getFile().getName()*/);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
+    }
+
+    private void salvarImagemFirebase(InputStream stream, String nome) {
+
+        StorageReference storage = FirebaseStorage
+                .getInstance()
+                .getReference()
+                .child(AppUtil.getIdUsuario(this) + "/image/profile/imagem-perfil");
+
+        UploadTask uploadTask = storage.putStream(stream);
+
+        uploadTask.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                storage.getDownloadUrl()
+                        .addOnSuccessListener(uri -> {
+                            Picasso.get()
+                                    .load(uri)
+                                    .rotate(90)
+                                    .into(imageView);
+                        });
+            }
+        });
     }
 }
